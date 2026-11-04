@@ -1,0 +1,30 @@
+[project]
+name = "covidml"
+version = "0.1.0"
+description = "Predicting COVID-19 case surges from epidemiological data and government measures"
+readme = "README.md"
+authors = [
+    { name = "berkay", email = "berkayozkirli@gmail.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "ipykernel>=7.3.0",
+    "matplotlib>=3.11.0",
+    "numpy>=2.5.1",
+    "openpyxl>=3.1.5",
+    "pandas>=3.0.3",
+    "scikit-learn>=1.9.0",
+    "seaborn>=0.13.2",
+    "torch>=2.13.0",
+    "xgboost>=3.3.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/covidml"]
+
+[tool.hatch.build.targets.sdist]
+include = ["/src", "/tests", "/notebooks", "/README.md", "/LICENSE", "/pyproject.toml"]
